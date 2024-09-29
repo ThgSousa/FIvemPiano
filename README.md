@@ -1,0 +1,1 @@
+Um piano simples e funcional para ser usado no FiveM, com sons de alta qualidade e tempo de resposta ok, ainda podem ser feitas algumas melhorias com relacao a recepção do som na parte dos outros clientes.
