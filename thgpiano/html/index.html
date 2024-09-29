@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="script.js" defer></script>
+    <style>
+        /* Estilos básicos para a interface do piano */
+        .piano-keys .key {
+            width: 50px;
+            height: 200px;
+            display: inline-block;
+            background: white;
+            border: 1px solid black;
+            margin: 0 2px;
+            position: relative;
+            cursor: pointer;
+        }
+        .piano-keys .key.black {
+            background: black;
+            height: 150px;
+            z-index: 1;
+            margin-left: -25px;
+            margin-right: -25px;
+            position: relative;
+        }
+        .piano-keys .key.active {
+            background: lightgray;
+        }
+        .volume-slider, .keys-checkbox {
+            margin: 10px;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .status.low-pitch {
+            color: rgb(144, 144, 233);
+        }
+        .status.high-pitch {
+            color: red;
+        }
+        .status.normal-pitch {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" style="display: none;">
+        <header>
+            <div class="column volume-slider" style="display: none;">
+                <span>Volume</span>
+                <input type="range" min="0" max="1" value="0.5" step="any">
+            </div>
+            <div class="column keys-checkbox">
+                <span>Mostrar Teclas</span>
+                <input type="checkbox" checked>
+            </div>
+            <div class="status" id="pitchStatus">Normal Pitch</div>
+        </header>
+        <ul class="piano-keys" style="align-content: center;">
+            <li class="key white" data-key="Q" data-note="c"><span>Q</span></li>
+            <li class="key black" data-key="2" data-note="c-sharp"><span>2</span></li>
+            <li class="key white" data-key="W" data-note="d"><span>W</span></li>
+            <li class="key black" data-key="3" data-note="d-sharp"><span>3</span></li>
+            <li class="key white" data-key="E" data-note="e"><span>E</span></li>
+            <li class="key white" data-key="R" data-note="f"><span>R</span></li>
+            <li class="key black" data-key="5" data-note="f-sharp"><span>5</span></li>
+            <li class="key white" data-key="T" data-note="g"><span>T</span></li>
+            <li class="key black" data-key="6" data-note="g-sharp"><span>6</span></li>
+            <li class="key white" data-key="Y" data-note="a"><span>Y</span></li>
+            <li class="key black" data-key="7" data-note="a-sharp"><span>7</span></li>
+            <li class="key white" data-key="U" data-note="b"><span>U</span></li>
+        </ul>
+        
+    </div>
+    <div id="hint" style="display: none;"></div>
+</body>
+</html>
